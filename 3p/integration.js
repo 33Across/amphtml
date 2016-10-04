@@ -44,6 +44,7 @@ import {reddit} from './reddit';
 import {twitter} from './twitter';
 
 // 3P Ad Networks - please keep in alphabetic order
+import {_33across} from '../ads/33across';
 import {_ping_} from '../ads/_ping_';
 import {a9} from '../ads/a9';
 import {accesstrade} from '../ads/accesstrade';
@@ -188,6 +189,7 @@ if (getMode().test || getMode().localDev) {
 }
 
 // Keep the list in alphabetic order
+register('33across', _33across);
 register('a9', a9);
 register('accesstrade', accesstrade);
 register('adblade', adblade);
@@ -306,6 +308,7 @@ const defaultAllowedTypesInCustomFrame = [
   'doubleclick',
   'yieldbot',
   '_ping_',
+  '33across'
 ];
 
 /**
