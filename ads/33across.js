@@ -26,7 +26,27 @@ export function _33across(global, data) {
 
   if (data.publisher.length != 22 || data.publisher.indexOf(' ') >= 0) {
     global.context.noContentAvailable();
-    throw new Error('Invalid 33Across publisher ID: ' + data.publisher);
+    throw new Error('Invalid 33Across publisher: ' + data.publisher);
+  }
+
+  var distro = 'siab',
+    product = (data.product || 'inpage').toLowerCase().replace(/-| /g, '');
+
+  switch (product) {
+    case 'siab':
+      product = 'inpage';
+      break;
+    case 'inpage':
+      break;
+    case 'infeed':
+      distro = 'infeed';
+      break;
+    case 'inview':
+      distro = 'rciv';
+      break;
+    default:
+      global.context.noContentAvailable();
+      throw new Error('Invalid 33Across product: ' + product);
   }
 
   global.Tynt = [];
@@ -35,15 +55,18 @@ export function _33across(global, data) {
   global.document.body.style.margin = '0';
   global.document.body.style.padding = '0';
 
-  if (data.debug && data.debug.indexOf('log') >= 0) {
-    global.location.search = '__tcdebugmode=1&__rtdebugmode=1';
+  if (data.debug) {
+    if (data.debug.indexOf('tc') >= 0) {
+      global.Tynt.debug = 1;
+    }
+    // TODO: sicDebug will not be supported by SIC, need some other solution
+    if (data.debug.indexOf('sic') >= 0) {
+      global.Tynt.overrides = {sicDebug: true};
+    }
   }
 
   const tagId = 'x33x' + Date.now(),
-    product = data.product || 'inpage',
     adSize = data.width + 'x' + data.height;
-
-  global.document.getElementById('c').setAttribute('id', tagId);
 
   global.Tynt.cmd.push({
     publisherId: data.publisher,
@@ -52,8 +75,8 @@ export function _33across(global, data) {
     }
   });
 
-  var distro = (product === 'inpage' ? 'siab' : product) + '.js';
-  loadScript(global, 'https://cdn.tynt.com/' + distro);
+  loadScript(global, 'https://cdn.tynt.com/' + distro + '.js');
+
   global.context.renderStart();
 }
 

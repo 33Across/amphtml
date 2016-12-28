@@ -308,7 +308,6 @@ const defaultAllowedTypesInCustomFrame = [
   'doubleclick',
   'yieldbot',
   '_ping_',
-  '33across'
 ];
 
 /**

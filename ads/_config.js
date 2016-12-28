@@ -38,9 +38,8 @@
 export const adConfig = {
 
   '33across': {
-    prefetch: 'https://cdn.tynt.com/siab.js',
     clientIdScope: 'AMP_ECID_33ACROSS',
-    renderStartImplemented: true
+    renderStartImplemented: true,
   },
 
   _ping_: {

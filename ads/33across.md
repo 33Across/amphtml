@@ -16,7 +16,9 @@ limitations under the License.
 
 # 33Across
 
-Please visit our [website](https://33across.com/) for more information about us.
+For more information on 33Across please visit our [website](https://33across.com/).
+
+For more information on our `amp-ad` implementation please contact `pub-support@33across.com`.
 
 ## Examples
 
@@ -42,10 +44,10 @@ Please visit our [website](https://33across.com/) for more information about us.
 
 ## Configuration
 
-Supported parameters:
+#### Supported Attributes
 
-- **data-publisher**: Required. Publisher ID provided by 33Across.
-- **data-product**:   Optional. Product name. Default = "inpage".
-
-For further information regarding this implementation please contact `pub-support@33across.com`
+- **width** - Required.
+- **height** - Required.
+- **data-publisher** - Required. 33Across publisher ID.
+- **data-product** - Optional. Product name. Default: "inpage".
 
