@@ -40,6 +40,11 @@ export const adConfig = {
     renderStartImplemented: true,
   },
 
+  '33across': {
+    clientIdScope: 'AMP_ECID_33ACROSS',
+    renderStartImplemented: true,
+  },
+
   a8: {
     prefetch: 'https://statics.a8.net/amp/ad.js',
     renderStartImplemented: true,

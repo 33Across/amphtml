@@ -80,6 +80,7 @@ The `<amp-ad>` requires width and height values to be specified according to the
 
 ## Supported ad networks
 
+- [33Across](../../ads/33across.md)
 - [A8](../../ads/a8.md)
 - [A9](../../ads/a9.md)
 - [AccessTrade](../../ads/accesstrade.md)

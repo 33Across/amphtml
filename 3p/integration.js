@@ -51,6 +51,7 @@ import {twitter} from './twitter';
 
 // 3P Ad Networks - please keep in alphabetic order
 import {_ping_} from '../ads/_ping_';
+import {_33across} from '../ads/33across';
 import {a8} from '../ads/a8';
 import {a9} from '../ads/a9';
 import {accesstrade} from '../ads/accesstrade';
@@ -202,6 +203,7 @@ if (getMode().test || getMode().localDev) {
 }
 
 // Keep the list in alphabetic order
+register('33across', _33across);
 register('a8', a8);
 register('a9', a9);
 register('accesstrade', accesstrade);
